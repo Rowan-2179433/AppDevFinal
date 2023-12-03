@@ -9,6 +9,9 @@ namespace PasswordProj
 {
     internal class Generators
     {
+        //TODO:
+        //Come up with serilization method 
+        //Make password generator 
 
         public string generatePassword(int length, bool numbers, bool specialCharacters)
         {
@@ -29,14 +32,14 @@ namespace PasswordProj
             }
 
 
+            updateFile();
 
-
-            return null; 
+            return "Functional"; 
         }
 
-        public static void updateDatabase()
+        public static void updateFile()
         {
-
+            
 
 
 
