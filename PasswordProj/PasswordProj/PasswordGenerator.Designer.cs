@@ -64,6 +64,11 @@
             // lengthUpDown
             // 
             this.lengthUpDown.Location = new System.Drawing.Point(238, 100);
+            this.lengthUpDown.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
             this.lengthUpDown.Name = "lengthUpDown";
             this.lengthUpDown.Size = new System.Drawing.Size(90, 20);
             this.lengthUpDown.TabIndex = 3;

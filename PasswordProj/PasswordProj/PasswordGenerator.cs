@@ -34,6 +34,7 @@ namespace PasswordProj
         public PasswordGenerator()
         {
             InitializeComponent();
+            saveButton.Enabled = false;
 
         }
         //Saves the password into a file
