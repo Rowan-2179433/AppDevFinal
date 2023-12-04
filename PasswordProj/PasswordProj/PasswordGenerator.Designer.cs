@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordGenerator));
             this.lengthUpDown = new System.Windows.Forms.NumericUpDown();
             this.numbersCheck = new System.Windows.Forms.CheckBox();
             this.specialCheck = new System.Windows.Forms.CheckBox();
@@ -43,9 +44,11 @@
             this.generatorPage = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.readerSelectButton = new System.Windows.Forms.Button();
-            this.passwordTextBox = new System.Windows.Forms.RichTextBox();
             this.revealButton = new System.Windows.Forms.Button();
             this.displayPasswordsLabel = new System.Windows.Forms.Label();
+            this.listBoxPasswords = new System.Windows.Forms.ListBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.copyPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lengthUpDown)).BeginInit();
             this.passwordControl.SuspendLayout();
             this.generatorPage.SuspendLayout();
@@ -192,8 +195,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.copyPassword);
+            this.tabPage2.Controls.Add(this.deleteButton);
+            this.tabPage2.Controls.Add(this.listBoxPasswords);
             this.tabPage2.Controls.Add(this.readerSelectButton);
-            this.tabPage2.Controls.Add(this.passwordTextBox);
             this.tabPage2.Controls.Add(this.revealButton);
             this.tabPage2.Controls.Add(this.displayPasswordsLabel);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -213,15 +218,6 @@
             this.readerSelectButton.Text = "Select File";
             this.readerSelectButton.UseVisualStyleBackColor = true;
             this.readerSelectButton.Click += new System.EventHandler(this.readerSelectButton_Click);
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(18, 87);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.ReadOnly = true;
-            this.passwordTextBox.Size = new System.Drawing.Size(433, 327);
-            this.passwordTextBox.TabIndex = 18;
-            this.passwordTextBox.Text = "";
             // 
             // revealButton
             // 
@@ -243,6 +239,36 @@
             this.displayPasswordsLabel.TabIndex = 16;
             this.displayPasswordsLabel.Text = "Display Passwords";
             // 
+            // listBoxPasswords
+            // 
+            this.listBoxPasswords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxPasswords.FormattingEnabled = true;
+            this.listBoxPasswords.ItemHeight = 20;
+            this.listBoxPasswords.Location = new System.Drawing.Point(18, 98);
+            this.listBoxPasswords.Name = "listBoxPasswords";
+            this.listBoxPasswords.Size = new System.Drawing.Size(433, 284);
+            this.listBoxPasswords.TabIndex = 20;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(48, 388);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(148, 34);
+            this.deleteButton.TabIndex = 21;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // copyPassword
+            // 
+            this.copyPassword.Location = new System.Drawing.Point(274, 389);
+            this.copyPassword.Name = "copyPassword";
+            this.copyPassword.Size = new System.Drawing.Size(151, 33);
+            this.copyPassword.TabIndex = 22;
+            this.copyPassword.Text = "Copy Password";
+            this.copyPassword.UseVisualStyleBackColor = true;
+            this.copyPassword.Click += new System.EventHandler(this.copyPassword_Click);
+            // 
             // PasswordGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +276,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(500, 472);
             this.Controls.Add(this.passwordControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PasswordGenerator";
             this.Text = "The Vault - Password Generator";
@@ -279,9 +306,11 @@
         private System.Windows.Forms.TabPage generatorPage;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button readerSelectButton;
-        private System.Windows.Forms.RichTextBox passwordTextBox;
         private System.Windows.Forms.Button revealButton;
         private System.Windows.Forms.Label displayPasswordsLabel;
+        private System.Windows.Forms.ListBox listBoxPasswords;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button copyPassword;
     }
 }
 
