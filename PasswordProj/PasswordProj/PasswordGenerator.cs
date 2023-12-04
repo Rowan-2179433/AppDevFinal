@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 
 namespace PasswordProj
 {
@@ -21,16 +24,27 @@ namespace PasswordProj
         {
             InitializeComponent();
         }
-
+        //Helper method to save the password into a file
+        public static void SavePasswordToFile(string password, string filePath)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream stream = new FileStream(filePath, FileMode.Create))
+            {
+                formatter.Serialize(stream, password);
+            }
+        }
         //Saves generated password and prompts the user with the save form 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            
-            string text = outputTextBox.Text; 
+            string password = outputTextBox.Text;
+            string filePath = Path.Combine(Environment.CurrentDirectory, "Database.ser");
 
-            //Save to serialized file 
+            PasswordGenerator.SavePasswordToFile(password, filePath);
 
+            // Optionally, show a message to the user that the file has been saved
+            MessageBox.Show("Password saved successfully.");
         }
+
 
         //Status: Complete 
         private void generateButton_Click(object sender, EventArgs e)

@@ -15,27 +15,41 @@ namespace PasswordProj
 
         public string generatePassword(int length, bool numbers, bool specialCharacters)
         {
-            string password = "";
+            const string lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+            const string uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string numbersChars = "0123456789";
+            const string specialChars = "!@#$%^&*()_+[]{}|;:,.<>?";
 
-            if (numbers && specialCharacters)
+            string allChars = lowercaseLetters + uppercaseLetters;
+            if (numbers)
             {
-
+                allChars += numbersChars;
             }
-            else if(specialCharacters && !numbers)
+            if (specialCharacters)
             {
-
+                allChars += specialChars;
             }
-            else if (!specialCharacters && numbers)
+
+            if (allChars.Length == 0)
             {
-
-            } else { 
+                // No character set selected
+                return "No character set selected";
             }
 
+            Random random = new Random();
+            StringBuilder passwordBuilder = new StringBuilder();
 
-            updateFile();
+            for (int i = 0; i < length; i++)
+            {
+                int randomIndex = random.Next(0, allChars.Length);
+                passwordBuilder.Append(allChars[randomIndex]);
+            }
 
-            return "Functional"; 
+            updateFile(); // You can call this function here if needed.
+
+            return passwordBuilder.ToString();
         }
+
 
         public static void updateFile()
         {
