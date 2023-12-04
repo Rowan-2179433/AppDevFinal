@@ -17,18 +17,18 @@ namespace PasswordProj
         private BinaryFormatter formatter = new BinaryFormatter();
         private FileStream output;
         private string selectedFilePath;
-        
+
         //List of passwords as strings  
         private List<string> hiddenPasswords = new List<string>(); // To store actual passwords
 
         // Flag to track visibility state
-        private bool isPasswordVisible = false; 
-        
+        private bool isPasswordVisible = false;
+
         //For the serialization methods
         private int counter = 0;
-        
+
         //For the hide and unhide functionality 
-        bool flag = true; 
+        bool flag = true;
 
 
         public PasswordGenerator()
@@ -97,7 +97,7 @@ namespace PasswordProj
             }
         }
 
-        
+
 
 
         private void generateButton_Click(object sender, EventArgs e)
@@ -258,7 +258,7 @@ namespace PasswordProj
                         string displayText = showPasswords ? $"{label}: {password}" : $"{label}: {new string('*', password.Length)}";
                         listBoxPasswords.Items.Add(displayText);
                         // Add the original entry to the hiddenPasswords list for potential deletion
-                        hiddenPasswords.Add(entry); 
+                        hiddenPasswords.Add(entry);
                     }
                 }
             }
@@ -275,7 +275,7 @@ namespace PasswordProj
                 //Turns the selected text into a variable 
                 var selectedIndex = listBoxPasswords.SelectedIndex;
                 // Check if an item is selected in the list box since you can't have an index that is less than 0 
-                if (selectedIndex != -1) 
+                if (selectedIndex != -1)
                 {
                     // Remove the selected item from the list
                     hiddenPasswords.RemoveAt(selectedIndex);
@@ -343,11 +343,33 @@ namespace PasswordProj
 
             //If no label is found it just returns what was given
             return entry;
-            
+
         }
 
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            Generators generators = new Generators();
+            string password = passTextbox.Text;
+            string strength = generators.CheckPasswordStrength(password);
+            strengthLabel.Text = strength;
+
+            if (strengthLabel.Text.Equals("Weak"))
+            {
+                strengthLabel.BackColor = Color.Red;
+            }
+            else if (strengthLabel.Text.Equals("Moderate"))
+            {
+                strengthLabel.BackColor = Color.Yellow;
+            }
+            else if (strengthLabel.Text.Equals("Strong"))
+            {
+                strengthLabel.BackColor = Color.LightGreen;
+                Font boldFont = new Font(strengthLabel.Font, FontStyle.Bold);
+                strengthLabel.Font = boldFont;
+            }
+        }
     }
 }
-   
+
 
 

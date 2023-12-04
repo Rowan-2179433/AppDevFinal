@@ -43,16 +43,22 @@
             this.passwordControl = new System.Windows.Forms.TabControl();
             this.generatorPage = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.copyPassword = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.listBoxPasswords = new System.Windows.Forms.ListBox();
             this.readerSelectButton = new System.Windows.Forms.Button();
             this.revealButton = new System.Windows.Forms.Button();
             this.displayPasswordsLabel = new System.Windows.Forms.Label();
-            this.listBoxPasswords = new System.Windows.Forms.ListBox();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.copyPassword = new System.Windows.Forms.Button();
+            this.strengthPage = new System.Windows.Forms.TabPage();
+            this.checkButton = new System.Windows.Forms.Button();
+            this.strengthLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passTextbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lengthUpDown)).BeginInit();
             this.passwordControl.SuspendLayout();
             this.generatorPage.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.strengthPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // lengthUpDown
@@ -166,6 +172,7 @@
             // 
             this.passwordControl.Controls.Add(this.generatorPage);
             this.passwordControl.Controls.Add(this.tabPage2);
+            this.passwordControl.Controls.Add(this.strengthPage);
             this.passwordControl.Location = new System.Drawing.Point(12, 9);
             this.passwordControl.Name = "passwordControl";
             this.passwordControl.SelectedIndex = 0;
@@ -209,6 +216,36 @@
             this.tabPage2.Text = "Reader";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // copyPassword
+            // 
+            this.copyPassword.Location = new System.Drawing.Point(274, 389);
+            this.copyPassword.Name = "copyPassword";
+            this.copyPassword.Size = new System.Drawing.Size(151, 33);
+            this.copyPassword.TabIndex = 22;
+            this.copyPassword.Text = "Copy Password";
+            this.copyPassword.UseVisualStyleBackColor = true;
+            this.copyPassword.Click += new System.EventHandler(this.copyPassword_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(48, 388);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(148, 34);
+            this.deleteButton.TabIndex = 21;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // listBoxPasswords
+            // 
+            this.listBoxPasswords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxPasswords.FormattingEnabled = true;
+            this.listBoxPasswords.ItemHeight = 20;
+            this.listBoxPasswords.Location = new System.Drawing.Point(18, 88);
+            this.listBoxPasswords.Name = "listBoxPasswords";
+            this.listBoxPasswords.Size = new System.Drawing.Size(433, 284);
+            this.listBoxPasswords.TabIndex = 20;
+            // 
             // readerSelectButton
             // 
             this.readerSelectButton.Location = new System.Drawing.Point(147, 49);
@@ -239,35 +276,61 @@
             this.displayPasswordsLabel.TabIndex = 16;
             this.displayPasswordsLabel.Text = "Display Passwords";
             // 
-            // listBoxPasswords
+            // strengthPage
             // 
-            this.listBoxPasswords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxPasswords.FormattingEnabled = true;
-            this.listBoxPasswords.ItemHeight = 20;
-            this.listBoxPasswords.Location = new System.Drawing.Point(18, 98);
-            this.listBoxPasswords.Name = "listBoxPasswords";
-            this.listBoxPasswords.Size = new System.Drawing.Size(433, 284);
-            this.listBoxPasswords.TabIndex = 20;
+            this.strengthPage.Controls.Add(this.checkButton);
+            this.strengthPage.Controls.Add(this.strengthLabel);
+            this.strengthPage.Controls.Add(this.passwordLabel);
+            this.strengthPage.Controls.Add(this.passTextbox);
+            this.strengthPage.Location = new System.Drawing.Point(4, 22);
+            this.strengthPage.Name = "strengthPage";
+            this.strengthPage.Padding = new System.Windows.Forms.Padding(3);
+            this.strengthPage.Size = new System.Drawing.Size(468, 428);
+            this.strengthPage.TabIndex = 2;
+            this.strengthPage.Text = "Password Strength Checker";
+            this.strengthPage.UseVisualStyleBackColor = true;
             // 
-            // deleteButton
+            // checkButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(48, 388);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(148, 34);
-            this.deleteButton.TabIndex = 21;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkButton.Location = new System.Drawing.Point(152, 186);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(162, 44);
+            this.checkButton.TabIndex = 19;
+            this.checkButton.Text = "Check Strength";
+            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
-            // copyPassword
+            // strengthLabel
             // 
-            this.copyPassword.Location = new System.Drawing.Point(274, 389);
-            this.copyPassword.Name = "copyPassword";
-            this.copyPassword.Size = new System.Drawing.Size(151, 33);
-            this.copyPassword.TabIndex = 22;
-            this.copyPassword.Text = "Copy Password";
-            this.copyPassword.UseVisualStyleBackColor = true;
-            this.copyPassword.Click += new System.EventHandler(this.copyPassword_Click);
+            this.strengthLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.strengthLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.strengthLabel.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.strengthLabel.Location = new System.Drawing.Point(46, 291);
+            this.strengthLabel.Name = "strengthLabel";
+            this.strengthLabel.Size = new System.Drawing.Size(377, 58);
+            this.strengthLabel.TabIndex = 18;
+            this.strengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(106, 80);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(268, 24);
+            this.passwordLabel.TabIndex = 17;
+            this.passwordLabel.Text = "Password Strength Checker";
+            // 
+            // passTextbox
+            // 
+            this.passTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTextbox.Location = new System.Drawing.Point(46, 136);
+            this.passTextbox.Multiline = true;
+            this.passTextbox.Name = "passTextbox";
+            this.passTextbox.Size = new System.Drawing.Size(377, 30);
+            this.passTextbox.TabIndex = 0;
+            this.passTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PasswordGenerator
             // 
@@ -286,6 +349,8 @@
             this.generatorPage.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.strengthPage.ResumeLayout(false);
+            this.strengthPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,6 +376,11 @@
         private System.Windows.Forms.ListBox listBoxPasswords;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button copyPassword;
+        private System.Windows.Forms.TabPage strengthPage;
+        private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.Label strengthLabel;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.TextBox passTextbox;
     }
 }
 
