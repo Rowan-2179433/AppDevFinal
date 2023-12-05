@@ -1,0 +1,16 @@
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\bin\Debug\The Vault.exe.config
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\bin\Debug\The Vault.exe.manifest
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\bin\Debug\The Vault.application
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\bin\Debug\The Vault.exe
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\bin\Debug\The Vault.pdb
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.csproj.AssemblyReference.cache
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.csproj.SuggestedBindingRedirects.cache
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\PasswordProj.InputForm.resources
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\PasswordProj.PasswordGenerator.resources
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\TheVault.Properties.Resources.resources
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.csproj.GenerateResource.cache
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.csproj.CoreCompileInputs.cache
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.exe.manifest
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.application
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.exe
+C:\Users\2283429\AppDevFinal\PasswordProj\PasswordProj\obj\Debug\The Vault.pdb
